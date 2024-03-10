@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   # Resources
+  resources "players"
   resources "sessions"
   resources "users"
   
@@ -8,5 +9,5 @@ Rails.application.routes.draw do
   get("/logout", { :controller => "sessions", :action => "destroy" })
 
   # Define the root route
-  get("/", { :controller => "users", :action => "new" })
+  get("/", { :controller => "players", :action => "index" })
 end
